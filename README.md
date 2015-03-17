@@ -75,3 +75,7 @@ Where argument 1 is a pointer to the build `deb` file that you'd like to make an
 You can specify multiple tags by adding additional tag names to the end of the command. This is useful where a for example release 0.10.4 is made which also consitutes 'latest', '0.10-nightly', '0.10.4', '0.10' images.
 
 After running the script will clean up any images generated (but not the base images - for efficiency purposes).
+
+## debs
+http://packages.prosody.im/debian/dists/precise/main/binary-amd64/Packages
+http://packages.prosody.im/debian/dists/precise/main/binary-amd64/pool/main/p/prosody-trunk/prosody-trunk_1nightly548-1~precise_amd64.deb

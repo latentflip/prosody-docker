@@ -23,6 +23,7 @@ RUN apt-get update \
         lua-socket \
         lua-zlib \
         lua-zlib \
+        lua-bitop \
         lua5.1 \
         openssl \
     && rm -rf /var/lib/apt/lists/*
@@ -35,6 +36,10 @@ RUN dpkg -i /tmp/prosody.deb \
 
 COPY ./entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
+
+RUN mkdir -p /var/lib/prosody
+RUN chown -R prosody:prosody /var/lib/prosody
+RUN chmod -R 750 /var/lib/prosody
 
 EXPOSE 80 443 5222 5269 5347 5280 5281
 CMD ["prosodyctl", "start"]
